@@ -26,9 +26,12 @@ description: >- # this means to ignore newlines until "baseurl:"
   Content is delivered as-is for informational purposes only. Opinions are my own.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://darren.gdn" # the base hostname & protocol for your site, e.g. http://example.com
+permalink: /:categories/:year/:month/:day/:title:output_ext
 # twitter_username: jekyllrb
 github_username:  darrengoulden
 linkedin_username: darrengoulden
+# Homepage limit posts
+number_of_posts: 10
 # Build settings
 # Removed minima theme - now using a regular theme
 # theme: minima

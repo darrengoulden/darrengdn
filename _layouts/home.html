@@ -8,9 +8,9 @@ layout: default
   {%- endif -%}
 
   {{ content }}
-
+  <!--
   {%- if site.posts.size > 0 -%}
-    <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
+     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> 
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
@@ -30,5 +30,17 @@ layout: default
 
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
-
+  -->
 </div>
+{%- if site.posts.size > 0 -%}
+  <h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
+  {%- for post in site.posts limit: site.number_of_posts -%}
+    <article class="post-item">
+      <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
+      <h4 class="post-item-title">
+        <a href="{{ post.url }}">{{ post.title | escape }}</a>
+      </h4>
+    </article>
+  {%- endfor -%}
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+{%- endif -%}
