@@ -16,8 +16,6 @@ linkedin_username: darrengoulden
 number_of_posts: 10
 
 # Build settings
-# Removed minima theme - now using a regular theme
-# theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
