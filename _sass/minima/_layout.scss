@@ -100,8 +100,6 @@
   }
 }
 
-
-
 /**
  * Site footer
  */
@@ -301,4 +299,10 @@
       @include relative-font-size(1.125);
     }
   }
+}
+
+.center-image
+{
+    margin: 0 auto;
+    display: block;
 }
