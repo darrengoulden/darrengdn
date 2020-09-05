@@ -46,4 +46,4 @@ scp -r admin@pexip_node:/opt/pexip/share/web/static/dist/web/teams/  /local/dire
 
 _NB: The latest version of Windows includes SCP so you no longer need to use WinSCP_
 
-Please visit the following page to review the full integration process for Microsoft Teams https://docs.pexip.com/admin/teams_intro.htm
+Please visit the following page to review the full integration process for Microsoft Teams <https://docs.pexip.com/admin/teams_intro.htm>
