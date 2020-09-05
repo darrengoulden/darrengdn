@@ -5,8 +5,6 @@ date:   2020-09-04 08:00:00 +0100
 categories: pexip cvi
 ---
 
-https://docs.pexip.com/admin/teams_intro.htm
-
 When you enable Microsoft Teams integration with Pexip Infinity one of the [final steps](https://docs.pexip.com/admin/teams_connector.htm#authorize_lobby) is to configure the dialling instructions for your users using the `SkypeOnlineConnector` PowerShell module.  The dialling instructions are embedded into a Microsoft Teams invite and enables users to visit a webpage with additional joining instructions for the meeting.
 
 ![cvi-invitation-instructions]({{ site.baseurl }}/assets/img/2020-09-04-hosting-your-own-alternate-dialling-instructions/invitation_instructions_784x602.png){: .center-image }
@@ -46,3 +44,5 @@ scp -r admin@pexip_node:/opt/pexip/share/web/static/dist/web/teams/  /local/dire
 ```
 
 _NB: The latest version of Windows includes SCP so you no longer need to use WinSCP_
+
+Please visit the following page to review the full integration process for Microsoft Teams https://docs.pexip.com/admin/teams_intro.htm
