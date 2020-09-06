@@ -38,7 +38,7 @@ Open a PowerShell window
 
 ![windows-powershell]({{ site.baseurl }}/assets/img/2020-09-04-hosting-your-own-alternate-dialling-instructions/powershell.png){: .center-image }
 
-_NB: The latest version of Windows includes SCP so you no longer need to use WinSCP, however, if you prefer that, then feel free!_
+_NB: The latest version of Windows includes SCP so you no longer need to use a 3rd party application like WinSCP, however, if you prefer that, then feel free!_
 
 # Pull the default files from a Pexip node
 
