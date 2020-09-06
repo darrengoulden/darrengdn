@@ -31,11 +31,11 @@ defaults:
 disqus:
   shortname: darrendgn
 
- # Analytics
+# Analytics
 google_analytics: UA-177327958-1
 
 # Excludes
-  exclude:
+exclude:
   - changelog.md
   - Gemfile
   - Gemfile.lock
