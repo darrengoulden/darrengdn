@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Hosting your own alternative dialling instructions"
+title:  "Host your own alternate dialling instruction page"
 date:   2020-09-04 08:00:00 +0100
 categories: pexip cvi
 comments: true
@@ -42,7 +42,7 @@ _NB: The latest version of Windows includes SCP so you no longer need to use a 3
 
 # Pull the default files from a Pexip node
 
-Run the following command in PowerShell or Terminal, this will copy the folder and its contents to your /local/directory, don't forgot to replace the pexip_name and the destination directory.
+Run the following command in either PowerShell or Terminal, this will copy the folder and its contents to your /local/directory, don't forgot to replace the pexip_name and the destination directory.
 
 ```
 scp -r admin@pexip_node:/opt/pexip/share/web/static/dist/web/teams/  /local/directory
