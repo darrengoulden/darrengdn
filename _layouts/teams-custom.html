@@ -311,18 +311,24 @@
 <body onload="initContent()">
 
     <div id="header">{%- include header.html -%}</div>
-    <div id="footer">{%- include back.html -%}</div>
+    <div id="footer">
+        <header class="site-back2post" role="banner">
+            <div class="wrapper">
+              <a href="https://darren.gdn/pexip/cvi/2020/09/04/hosting-your-own-alternate-dialling-instructions.html" style="margin: 0 auto; display: block; width: 50%;text-align: center;">Back to post</a>
+            </div>
+        </header>
+    </div>
 
     <div id="fullpage">
         <div class="section" id="section0">
             <div class="intro">
                 <h1>How would you like to join?</h1>
                 <div style="width: 100%;margin: 0 auto;">
-                    <div style="width: 200px;display: inline-block;padding-top: 10px;white-space:nowrap;">
+                    <div style="width: 200px;display: inline-block;padding-top: 10px;">
                         <a href="#anchor2"><img class="body-logo-svg" src="{{ site.baseurl }}/assets/img/teams-default/VTC.svg" style="border:none"/></a>
                         <a href="#anchor2"><p>Video Endpoint</p></a></br>
                     </div>
-                    <div id="webrtc-dial-option" style="width: 200px;padding-top: 10px;white-space:nowrap;text-align: center;display: none;">
+                    <div id="webrtc-dial-option" style="width: 200px;padding-top: 10px;display: none;">
                         <a href="#anchor3"><img class="body-logo-svg" src="{{ site.baseurl }}/assets/img/teams-default/browser.svg" style="border:none"/></a>
                         <a href="#anchor3"><p>Web Browser</p></a>
                     </div>
