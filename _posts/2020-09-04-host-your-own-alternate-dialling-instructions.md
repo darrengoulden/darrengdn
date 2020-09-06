@@ -53,11 +53,11 @@ Once you have the files you can edit them and host them on your own webserver
 Visit the Pexip documentation site to review the full integration process [Integrating Microsoft Teams with Pexip Infinity](https://docs.pexip.com/admin/integrate_teams.htm){: .acustom }
 
 
-This is the default template which resides on the Pexip nodes;
+Below is a live example of the default template which resides on the Pexip nodes;
 
 [Teams default meeting invitation](/teams-default.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w&test=test){: .acustom }
 
-This is a modified version that uses [fullPage.js](https://github.com/alvarotrigo/fullPage.js) to provide the user with two options
+Below is a live example of a modified version that uses [fullPage.js](https://github.com/alvarotrigo/fullPage.js) to provide the user with two options
 
 [Teams custom meeting invitation](/teams-custom.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w&test=test#anchor1){: #custom_link .acustom }
 
