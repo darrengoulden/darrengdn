@@ -14,6 +14,8 @@ Pexip Infinity nodes host a default page for these dialling instructions, and th
 
 ![pexip-default-cvi-page]({{ site.baseurl }}/assets/img/2020-09-04-hosting-your-own-alternate-dialling-instructions/pexip_default_cvi_page_1289x683.png){: .center-image }
 
+## Pull the default files from a Pexip node
+
 # Folder location
 
 The files for the default Pexip template are located on the Pexip nodes (transcoding or proxy) in the path below
@@ -26,17 +28,17 @@ Copy this folder from the Pexip nodes to your local machine
 
 # MacOS
 
-Open up a terminal window
+Open a terminal window
 
 ![macos-terminal]({{ site.baseurl }}/assets/img/2020-09-04-hosting-your-own-alternate-dialling-instructions/terminal.png){: .center-image }
 
 # Windows
 
-Open up a PowerShell window
+Open a PowerShell window
 
 ![windows-powershell]({{ site.baseurl }}/assets/img/2020-09-04-hosting-your-own-alternate-dialling-instructions/powershell.png){: .center-image }
 
-_NB: The latest version of Windows includes SCP so you no longer need to use WinSCP_
+_NB: The latest version of Windows includes SCP so you no longer need to use WinSCP, however, if you prefer that, then feel free!_
 
 # Pull the default files from a Pexip node
 
@@ -51,12 +53,24 @@ Once you have the files you can edit them and host them on your own webserver
 Visit the Pexip documentation site to review the full integration process [Integrating Microsoft Teams with Pexip Infinity](https://docs.pexip.com/admin/integrate_teams.htm){: .acustom }
 
 
-Try it out;
+This is the default template which resides on the Pexip nodes;
 
 [Teams default meeting invitation](/teams-default.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w&test=test){: .acustom }
 
+This is a modified version that uses [fullPage.js](https://github.com/alvarotrigo/fullPage.js) to provide the user with two options
+
 [Teams custom meeting invitation](/teams-custom.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w&test=test#anchor1){: #custom_link .acustom }
 
-_This custom page uses [fullPage.js](https://github.com/alvarotrigo/fullPage.js)_
+The parameters used for the examples above are 
 
-You can view the code for the custom page [here](https://github.com/darrengoulden/darrengdn/blob/master/_layouts/teams-custom.html)
+ * conf=123456789
+ * ivr=teams
+ * d=domain.com
+ * prefix=teams.
+ * ip=1.2.3.4
+ * w
+ * test=test
+
+A full list of parameters are listed in the [InstructionUri](https://docs.pexip.com/admin/teams_connector.htm#instruction_uri) section of the Pexip docs.
+
+You can view the html for the custom page [here](https://github.com/darrengoulden/darrengdn/blob/master/_layouts/teams-custom.html)
