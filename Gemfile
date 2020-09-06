@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "jekyll-feed"
 gem "jekyll-sitemap"
-gem "jekyll-extlinks"
+gem 'jekyll-target-blank'
 
 gem "github-pages", group: :jekyll_plugins
 
@@ -10,5 +10,5 @@ gem "github-pages", group: :jekyll_plugins
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-sitemap"
-  gem "jekyll-extlinks"
+  gem 'jekyll-target-blank'
 end

@@ -114,9 +114,6 @@ GEM
       rouge (>= 2.0, < 4.0)
     jekyll-default-layout (0.1.4)
       jekyll (~> 3.0)
-    jekyll-extlinks (0.0.4)
-      jekyll (~> 3.0)
-      nokogiri (~> 1.6)
     jekyll-feed (0.13.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-gist (1.5.0)
@@ -147,6 +144,9 @@ GEM
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-swiss (1.0.0)
+    jekyll-target-blank (2.0.0)
+      jekyll (>= 3.0, < 5.0)
+      nokogiri (~> 1.10)
     jekyll-theme-architect (0.1.1)
       jekyll (~> 3.5)
       jekyll-seo-tag (~> 2.0)
@@ -256,9 +256,9 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-extlinks
   jekyll-feed
   jekyll-sitemap
+  jekyll-target-blank
 
 BUNDLED WITH
    2.1.4

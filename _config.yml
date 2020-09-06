@@ -19,7 +19,7 @@ number_of_posts: 10
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-extlinks
+  - jekyll-target-blank
 
 defaults:
   - scope:
