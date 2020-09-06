@@ -306,3 +306,14 @@
     margin: 0 auto;
     display: block;
 }
+
+/**
+ * Back to post
+ */
+ .site-back2post {
+  border-bottom: 1px solid $grey-color-light;
+  min-height: 25px;
+
+  // Positioning context for the mobile navigation icon
+  position: relative;
+}

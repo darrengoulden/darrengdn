@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        {%- seo -%}
+        <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+        {%- feed_meta -%}
+        {%- if jekyll.environment == 'production' and site.google_analytics -%}
+          {%- include google-analytics.html -%}
+        {%- endif -%}
+        <title>Teams dial in information</title>
+        <script>
+            //complete link example: https://localhost:8080/teams/?conf=893475928479&ivr=teams&d=pexip.vc&prefix=teams.&ip=1.2.3.4&w&test=test
+            var params = [];
+
+            params = getQueryParams();
+
+            function getQueryParams() {
+                var query = window.location.search.substring(1).split('&');
+                var paris = [];
+                for (var i = 0; i < query.length; i++) {
+                    var pair = query[i].split('=');
+                    paris[pair[0]] = pair[1]
+                        ? decodeURIComponent(pair[1])
+                        : true;
+                }
+                return paris;
+            }
+
+            function initContent() {
+                var domainJoinAlias;
+                domainJoinAlias =
+                    encodeURIComponent(params.prefix ? params.prefix : '') +
+                    encodeURIComponent(params.conf) +
+                    '@' +
+                    encodeURIComponent(params.d);
+
+                document.getElementById(
+                    'direct-domain-join'
+                ).textContent = domainJoinAlias;
+                document.getElementById('direct-domain-join').href =
+                    'sip:' + domainJoinAlias;
+                document.getElementById('lobby-domain-join').textContent =
+                    params.ivr + '@' + params.d;
+                document.getElementById('conference-id').textContent =
+                    params.conf;
+
+                if (params.ip) {
+                    document.getElementById(
+                        'direct-ip-dial-section'
+                    ).style.display = 'block';
+                    document.getElementById('direct-ip-join-1').textContent =
+                        params.conf + '@' + params.ip;
+                    document.getElementById('direct-ip-join-2').textContent =
+                        params.ip + '##' + params.conf;
+                    document.getElementById(
+                        'lobby-ip-join-option'
+                    ).style.display = 'inline';
+                    document.getElementById('lobby-ip-join').textContent =
+                        params.ip;
+                }
+
+                if (
+                    params.w &&
+                    navigator &&
+                    navigator.userAgent.indexOf('Edge') === -1
+                ) {
+                    document.getElementById(
+                        'webrtc-dial-section'
+                    ).style.display = 'flex';
+                    var webrtcLink =
+                        'https://' +
+                        window.location.host +
+                        '/webapp/?conference=' +
+                        domainJoinAlias;
+                    document.getElementById(
+                        'webrtc-join'
+                    ).textContent = webrtcLink;
+                    document.getElementById('webrtc-join').href = webrtcLink;
+                }
+
+                if (params.test) {
+                    document.getElementById('test-call-section').style.display =
+                        'flex';
+                    document.getElementById('test-join').textContent =
+                        params.test + '@' + params.d;
+                    document.getElementById('test-join').href =
+                        'sip:' +
+                        encodeURIComponent(params.test) +
+                        '@' +
+                        encodeURIComponent(params.d);
+                }
+            }
+        </script>
+        <link rel="shortcut icon" href="{{ site.baseurl }}/assets/img/teams-default/favicon.png" />
+        <style>
+            html,
+            body {
+                margin: 0;
+                height: 100%;
+                font-family: 'GTPressuraLight', sans-serif;
+                font-weight: normal;
+                color: #000000;
+                color: rgba(0, 0, 0, 0.87);
+                font-size: 16px;
+            }
+
+            @font-face {
+                font-family: GTPressuraLight;
+                src: url('{{ site.baseurl }}/assets/img/teams-default/GT-Pressura-Light.otf');
+            }
+
+            a {
+                color: #1f232f;
+            }
+
+            a:hover {
+                color: #0EBEC7;
+            }
+
+            h2 {
+                margin: 14px 0;
+                font-size: 22px;
+            }
+
+            .bold-font {
+                font-weight: 700;
+            }
+
+            .page-container {
+                height: 100%;
+                width: 100%;
+            }
+
+            .header {
+                height: 75px;
+                border-bottom: 1px solid #e0dcdc;
+                display: flex;
+                align-items: center;
+            }
+
+            .header-text {
+                font-size: 24px;
+                margin-left: 50px;
+                color: #0A2136;
+            }
+
+            .header-logo-svg {
+                height: 34px;
+                padding-left: 30px;
+            }
+
+            .main-content {
+                width: 100%;
+                overflow-y: auto;
+            }
+
+            .dial-info {
+                width: 70%;
+                max-width: 1280px;
+                margin: 20px auto 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                justify-content: flex-start;
+            }
+
+            .dial-section {
+                display: flex;
+            }
+
+            .dial-section-icon {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 162px;
+            }
+
+            .body-logo-svg {
+                width: 76px;
+            }
+
+            .dial-section-text {
+                border-bottom: 1px solid #0EBEC7;
+                padding-bottom: 20px;
+                width: calc(100% - 162px);
+            }
+
+            .bottom {
+                width: 100%;
+                font-size: 12px;
+                color: #0A2136;
+                opacity: 0.46;
+                margin: 46px auto 10px auto;
+                display: flex;
+                justify-content: center;
+            }
+
+            @media screen and (min-width: 481px) and (max-width: 767px) {
+                .dial-info {
+                    width: 80%;
+                }
+
+                .dial-section-icon {
+                    width: 110px;
+                }
+
+                .body-logo-svg {
+                    width: 60px;
+                }
+
+                .dial-section-text {
+                    border-bottom: 1px solid #0EBEC7;
+                    padding-bottom: 20px;
+                    width: calc(100% - 110px);
+                }
+            }
+
+            @media screen and (max-width: 480px) {
+                body {
+                    font-size: 14px;
+                }
+
+                .header {
+                    height: 60px;
+                }
+
+                .header-logo-svg {
+                    width: 64px;
+                    padding-left: 16px;
+                }
+
+                .header-text {
+                    font-size: 20px;
+                }
+
+                .dial-info {
+                    width: 90%;
+                    margin: 5px auto;
+                }
+
+                .dial-section-icon {
+                    width: 68px;
+                }
+
+                .body-logo-svg {
+                    width: 45px;
+                }
+
+                .dial-section-text {
+                    border-bottom: 1px solid #0EBEC7;
+                    padding-bottom: 22px;
+                    width: calc(100% - 68px);
+                }
+
+                h2 {
+                    margin: 12px 0 6px 0;
+                    font-size: 20px;
+                }
+
+                .bottom {
+                    margin-top: 24px;
+                }
+            }
+        </style>
+    </head>
+
+    <body onload="initContent()">
+
+        {%- include header.html -%}
+
+        {%- include back.html -%}
+
+        <div class="page-container">
+            <div class="header">
+                <div class="header-logo">
+                    <a
+                        href="https://pexip.com"
+                        style="display: flex;"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <img
+                            class="header-logo-svg"
+                            src="{{ site.baseurl }}/assets/img/teams-default/pexip-name-blue-logo.svg"
+                            style="border:none"
+                        />
+                    </a>
+                </div>
+                <div class="header-text">Video meeting invitation</div>
+            </div>
+            <div class="main-content">
+                <div class="dial-info">
+                    <div class="dial-section">
+                        <div class="dial-section-icon">
+                            <img class="body-logo-svg" src="{{ site.baseurl }}/assets/img/teams-default/VTC.svg" style="border:none"/>
+                        </div>
+                        <div class="dial-section-text">
+                            <h2>Join the meeting directly</h2>
+                            <div>
+                                From a VTC/SIP system, enter:
+                                <a
+                                    id="direct-domain-join"
+                                    class="bold-font"
+                                    target="_blank"
+                                    rel="noopener"
+                                ></a>
+                            </div>
+                            <div
+                                id="direct-ip-dial-section"
+                                style="display: none; margin-top: 6px;"
+                            >
+                                Alternative addresses (e.g. H.323 systems):
+                                <span
+                                    id="direct-ip-join-1"
+                                    class="bold-font"
+                                ></span>
+                                or
+                                <span
+                                    id="direct-ip-join-2"
+                                    class="bold-font"
+                                ></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dial-section">
+                        <div class="dial-section-icon"></div>
+                        <div class="dial-section-text">
+                            <h2>Join via lobby service</h2>
+                            <div>
+                                From a VTC/SIP system, enter:
+                                <span
+                                    id="lobby-domain-join"
+                                    class="bold-font"
+                                ></span
+                                ><span
+                                    id="lobby-ip-join-option"
+                                    style="display: none;"
+                                >
+                                    or
+                                    <span
+                                        id="lobby-ip-join"
+                                        class="bold-font"
+                                    ></span
+                                ></span>
+                                then enter the conference ID:
+                                <span
+                                    id="conference-id"
+                                    class="bold-font"
+                                ></span>
+                                followed by <span class="bold-font">#</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="dial-section"
+                        id="webrtc-dial-section"
+                        style="display: none;"
+                    >
+                        <div class="dial-section-icon">
+                            <img class="body-logo-svg" src="{{ site.baseurl }}/assets/img/teams-default/browser.svg" style="border:none"/>
+                        </div>
+                        <div class="dial-section-text">
+                            <h2>From a browser</h2>
+                            <div>
+                                Go to:
+                                <a
+                                    id="webrtc-join"
+                                    class="bold-font"
+                                    target="_blank"
+                                    rel="noopener"
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="dial-section"
+                        id="test-call-section"
+                        style="display: none;"
+                    >
+                        <div class="dial-section-icon"></div>
+                        <div class="dial-section-text">
+                            <h2>Test call</h2>
+                            <div>
+                                To test your connection from a VTC/SIP system,
+                                enter:
+                                <a
+                                    id="test-join"
+                                    class="bold-font"
+                                    target="_blank"
+                                    rel="noopener"
+                                ></a>
+                                and verify that you can see and hear yourself
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div>
+                        Powered by Pexip video interoperability for Microsoft
+                        Teams
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

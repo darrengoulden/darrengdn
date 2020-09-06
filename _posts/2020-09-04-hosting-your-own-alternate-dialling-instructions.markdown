@@ -49,3 +49,10 @@ scp -r admin@pexip_node:/opt/pexip/share/web/static/dist/web/teams/  /local/dire
 Once you have the files you can edit them and host them on your own webserver
 
 Visit the Pexip documentation site to review the full integration process [Integrating Microsoft Teams with Pexip Infinity](https://docs.pexip.com/admin/integrate_teams.htm){: .acustom }
+
+
+Try it out;
+
+[Teams default meeting invitation](/teams-default.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w&test=test){: .acustom }
+
+[Teams custom meeting invitation](/teams-custom.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w&test=test){: .acustom }
