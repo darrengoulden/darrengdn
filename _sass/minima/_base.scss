@@ -105,11 +105,11 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: $text-link-purple !important;
+  color: $text-base-color;
   text-decoration: none;
 
   &:visited {
-    color: $text-base-color;
+    color: $text-link-visited;
   }
 
   &:hover {
