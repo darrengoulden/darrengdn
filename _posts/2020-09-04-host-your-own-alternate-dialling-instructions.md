@@ -14,8 +14,6 @@ Pexip Infinity nodes host a default page for these dialling instructions, and th
 
 ![pexip-default-cvi-page]({{ site.baseurl }}/assets/img/2020-09-04-hosting-your-own-alternate-dialling-instructions/pexip_default_cvi_page_1289x683.png){: .center-image }
 
-## Pull the default files from a Pexip node
-
 # Folder location
 
 The files for the default Pexip template are located on the Pexip nodes (transcoding or proxy) in the path below.
