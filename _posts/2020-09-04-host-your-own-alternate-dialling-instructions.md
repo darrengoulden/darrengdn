@@ -53,7 +53,7 @@ Once you have the files you can edit them and host them on your own webserver.
 Visit the Pexip documentation site to review the full integration process [Integrating Microsoft Teams with Pexip Infinity](https://docs.pexip.com/admin/integrate_teams.htm){: .acustom }.
 
 
-The two links below provide live example of the default template and a modified version which provides the enduser with two options, the modified version uses [fullPage.js](https://github.com/alvarotrigo/fullPage.js).
+The two links below provide live examples of the default template and a modified version which provides the enduser with two options, the modified version uses [fullPage.js](https://github.com/alvarotrigo/fullPage.js).
 
 [Teams default alternate dialling instruction page](/teams-default.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w&test=test){: .acustom }
 
