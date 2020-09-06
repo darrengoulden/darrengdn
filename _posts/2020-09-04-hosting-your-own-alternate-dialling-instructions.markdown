@@ -56,5 +56,6 @@ Try it out;
 [Teams default meeting invitation](/teams-default.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w&test=test){: .acustom }
 
 [Teams custom meeting invitation](/teams-custom.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w&test=test#anchor1){: #custom_link .acustom }
+_This page uses [fullPage.js](https://github.com/alvarotrigo/fullPage.js)_
 
 You can view the code for the custom page [here](https://github.com/darrengoulden/darrengdn/blob/master/_layouts/teams-custom.html)

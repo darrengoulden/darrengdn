@@ -302,6 +302,21 @@
         .myContent{
         height: 300px;
         }
+
+        #header, #footer{
+		position:fixed;
+		display:block;
+		width: 100%;
+		z-index:9;
+		text-align:center;
+        }
+
+        #header{
+            top:0px;
+        }
+        #footer{
+            bottom:0px;
+        }
     </style>
 </head>
 <body onload="initContent()">
