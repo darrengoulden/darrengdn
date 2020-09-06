@@ -106,10 +106,11 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   color: $text-base-color;
+  color: $text-link-purple !important;
   text-decoration: none;
 
   &:visited {
-    color: darken($brand-color, 15%);
+    color: $text-base-color;
   }
 
   &:hover {
