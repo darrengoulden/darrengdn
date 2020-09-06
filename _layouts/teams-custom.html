@@ -15,8 +15,8 @@
     {%- endif -%}
     <title>Teams dial in information</title>
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/teams-custom/fullpage.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/teams-custom/examples.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/teams-custom/fullpage.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/teams-custom/examples.css"/>
 
     <!--[if IE]>
         <script type="text/javascript">
@@ -25,7 +25,7 @@
     <![endif]-->
         
     <script>
-        //complete link example: https://localhost:8080/teams/?conf=893475928479&ivr=teams&d=pexip.vc&prefix=teams.&ip=1.2.3.4&w&test=test
+        //complete link example: https://localhost:8080/teams/?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w&test=test
         var params = [];
 
         params = getQueryParams();
@@ -75,28 +75,46 @@
                     params.ip;
             }
 
+            if (params.ivr) {
+                document.getElementById('lobby-call-section').style.display = 'block';
+            }
+
             if (
                 params.w &&
                 navigator &&
                 navigator.userAgent.indexOf('Edge') === -1
             ) {
                 document.getElementById(
-                    'webrtc-dial-section'
-                ).style.display = 'flex';
+                    'webrtc-dial-option'
+                ).style.display = 'inline-block';
+                document.getElementById(
+                    'section2'
+                ).style.display = 'table';
                 var webrtcLink =
                     'https://' +
                     window.location.host +
                     '/webapp/?conference=' +
                     domainJoinAlias;
+                var webrtcTestLink =
+                    'https://' +
+                    window.location.host +
+                    '/webapp/?conference=' +
+                    encodeURIComponent(params.test) +
+                    '@' +
+                    encodeURIComponent(params.d);
                 document.getElementById(
                     'webrtc-join'
                 ).textContent = webrtcLink;
                 document.getElementById('webrtc-join').href = webrtcLink;
+                document.getElementById(
+                    'webrtc-join-test'
+                ).textContent = webrtcTestLink;
+                document.getElementById('webrtc-join-test').href = webrtcTestLink;
             }
 
             if (params.test) {
-                document.getElementById('test-call-section').style.display =
-                    'flex';
+                document.getElementById('test-call-section').style.display = 'block';
+                document.getElementById('webrtc-dial-test-section').style.display = 'block';
                 document.getElementById('test-join').textContent =
                     params.test + '@' + params.d;
                 document.getElementById('test-join').href =
@@ -130,7 +148,15 @@
         }
 
         a:hover {
-            color: #0EBEC7;
+            color: #434648;
+        }
+
+        a:visited {
+            color: #1f232f;
+        }
+
+        h1 {
+            font-size: 4em;
         }
 
         h2 {
@@ -292,33 +318,22 @@
             <div class="intro">
                 <h1>How would you like to join?</h1>
                 <div style="width: 100%;margin: 0 auto;">
-                    <div style="width: 200px;display: inline-block;;padding-top: 10px;white-space:nowrap;text-align: center;">
-                        <a href="#anchor2"><img class="body-logo-svg" src="{{ site.baseurl }}/assets/img/teams-default/browser.svg" style="border:none"/></a>
-                        <a href="#anchor2"><p>Browser</p></a>
-                    </div>
                     <div style="width: 200px;display: inline-block;padding-top: 10px;white-space:nowrap;">
-                        <a href="#anchor3"><img class="body-logo-svg" src="{{ site.baseurl }}/assets/img/teams-default/VTC.svg" style="border:none"/></a>
-                        <a href="#anchor3"><p>Video Endpoint</p></a></br>
+                        <a href="#anchor2"><img class="body-logo-svg" src="{{ site.baseurl }}/assets/img/teams-default/VTC.svg" style="border:none"/></a>
+                        <a href="#anchor2"><p>Video Endpoint</p></a></br>
+                    </div>
+                    <div id="webrtc-dial-option" style="width: 200px;padding-top: 10px;white-space:nowrap;text-align: center;display: none;">
+                        <a href="#anchor3"><img class="body-logo-svg" src="{{ site.baseurl }}/assets/img/teams-default/browser.svg" style="border:none"/></a>
+                        <a href="#anchor3"><p>Web Browser</p></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="section" id="section1">
-            <div class="slide" id="slide1">
-                <div class="intro">
-                    <h1>From a browser</h1>
-                    <div>
-                        Go to:
-                        <a id="webrtc-join" class="bold-font" target="_blank" rel="noopener"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section" id="section2">
             <div class="intro">
-                <h1>Join the meeting directly</h1>
                 <div>
-                    From a VTC/SIP system, enter:
+                    <h1>Join the meeting directly</h1>
+                    From a VTC/SIP system, dial:
                     <a id="direct-domain-join" class="bold-font" target="_blank" rel="noopener" ></a>
                 </div>
                 <div id="direct-ip-dial-section" style="display: none; margin-top: 6px;">
@@ -327,17 +342,45 @@
                     or
                     <span id="direct-ip-join-2" class="bold-font" ></span>
                 </div>
-                <h1>Join via lobby service</h1>
+                <div id="lobby-call-section" style="display: none;">
+                    <h1>Join via lobby service</h1>
+                    From a VTC/SIP system, dial:
+                        <span id="lobby-domain-join" class="bold-font"></span>
+                        <span id="lobby-ip-join-option" style="display: none;">
+                        or
+                        <span id="lobby-ip-join" class="bold-font"></span></span>
+                        then enter the conference ID:
+                        <span id="conference-id" class="bold-font"></span>
+                        followed by <span class="bold-font">#</span>
+                </div>
+                <div id="test-call-section" style="display: none;">
+                    <h1>Place a test call</h1>
+                    To test your connection from a VTC/SIP system, dial:
+                    <a id="test-join" class="bold-font" target="_blank" rel="noopener"></a>
+                    and verify that you can see and hear yourself
+                </div>
+                <div>
+                    <a href="#anchor1"><p style="padding-top: 30px;">Make a different selection</p></a>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section2" style="display: none;">
+            <div class="intro">
+                <div>
+                    <h1>Join from a browser</h1>
+                    Go to: <a id="webrtc-join" class="bold-font" target="_blank" rel="noopener"></a>
+                </div>
+                <div id="webrtc-dial-test-section" style="display: none;">
+                    <h1>Place a test call</h1>
                     <div>
-                        From a VTC/SIP system, enter:
-                            <span id="lobby-domain-join" class="bold-font"></span>
-                            <span id="lobby-ip-join-option" style="display: none;">
-                            or
-                            <span id="lobby-ip-join" class="bold-font"></span></span>
-                            then enter the conference ID:
-                            <span id="conference-id" class="bold-font"></span>
-                            followed by <span class="bold-font">#</span>
+                        To test your connection, go to:
+                        <a id="webrtc-join-test" class="bold-font" target="_blank" rel="noopener"></a>
+                        and verify that you can see and hear yourself
                     </div>
+                </div>
+                <div>
+                    <a href="#anchor1"><p style="padding-top: 30px;">Make a different selection</p></a>
+                </div>
             </div>
         </div>
     </div>
