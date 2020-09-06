@@ -36,6 +36,8 @@ Open up a PowerShell window
 
 ![windows-powershell]({{ site.baseurl }}/assets/img/2020-09-04-hosting-your-own-alternate-dialling-instructions/powershell.png){: .center-image }
 
+_NB: The latest version of Windows includes SCP so you no longer need to use WinSCP_
+
 # Pull the default files from a Pexip node
 
 Run the following command in PowerShell or Terminal, this will copy the folder and its contents to your /local/directory, don't forgot to replace the pexip_name and the destination directory.
@@ -44,6 +46,6 @@ Run the following command in PowerShell or Terminal, this will copy the folder a
 scp -r admin@pexip_node:/opt/pexip/share/web/static/dist/web/teams/  /local/directory
 ```
 
-_NB: The latest version of Windows includes SCP so you no longer need to use WinSCP_
+Once you have the files you can edit them and host them on your own webserver
 
-Please visit the following page to review the full integration process [Integrating Microsoft Teams with Pexip Infinity](https://docs.pexip.com/admin/integrate_teams.htm)
+Visit the Pexip documentation site to review the full integration process [Integrating Microsoft Teams with Pexip Infinity](https://docs.pexip.com/admin/integrate_teams.htm)
