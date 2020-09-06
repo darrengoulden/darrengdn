@@ -59,7 +59,7 @@ The two links below provide live examples of the default Pexip template and a mo
 
 [Teams custom alternate dialling instruction page](/teams-custom.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w&test=test#anchor1){: #custom_link .acustom }
 
-The parameters used for the examples above are;
+The parameters used in the examples above are;
  * conf=123456789
  * ivr=teams
  * d=domain.com
@@ -68,6 +68,6 @@ The parameters used for the examples above are;
  * w
  * test=test
 
-A full list of parameters are listed in the [InstructionUri](https://docs.pexip.com/admin/teams_connector.htm#instruction_uri) section of the Pexip docs.
+A full list of parameters is listed in the [InstructionUri](https://docs.pexip.com/admin/teams_connector.htm#instruction_uri) section of the Pexip docs.
 
 You can view the html for the custom page [here](https://github.com/darrengoulden/darrengdn/blob/master/_layouts/teams-custom.html).
