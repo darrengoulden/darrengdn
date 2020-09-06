@@ -88,7 +88,7 @@
                     'webrtc-dial-option'
                 ).style.display = 'inline-block';
                 document.getElementById(
-                    'section2'
+                    'browser'
                 ).style.display = 'table';
                 var webrtcLink =
                     'https://my.pexip.node/webapp/?conference=' +
@@ -331,22 +331,22 @@
     </div>
 
     <div id="fullpage">
-        <div class="section" id="section0">
+        <div class="section" data-anchor="select">
             <div class="intro">
                 <h1>How would you like to join?</h1>
                 <div style="width: 100%;margin: 0 auto;">
                     <div style="width: 200px;display: inline-block;padding-top: 10px;vertical-align: top;">
-                        <a href="#anchor2"><img class="body-logo-svg" src="{{ site.baseurl }}/assets/img/teams-default/VTC.svg" style="border:none"/></a>
-                        <a href="#anchor2"><p>Video Endpoint</p></a></br>
+                        <a href="#endpoint"><img class="body-logo-svg" src="{{ site.baseurl }}/assets/img/teams-default/VTC.svg" style="border:none"/></a>
+                        <a href="#endpoint"><p>Video Endpoint</p></a></br>
                     </div>
                     <div id="webrtc-dial-option" style="width: 200px;padding-top: 10px;display: none;vertical-align: top;">
-                        <a href="#anchor3"><img class="body-logo-svg" src="{{ site.baseurl }}/assets/img/teams-default/browser.svg" style="border:none"/></a>
-                        <a href="#anchor3"><p>Web Browser</p></a>
+                        <a href="#webrtc"><img class="body-logo-svg" src="{{ site.baseurl }}/assets/img/teams-default/browser.svg" style="border:none"/></a>
+                        <a href="#webrtc"><p>Web Browser</p></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="section" id="section1">
+        <div class="section" data-anchor="endpoint">
             <div class="intro">
                 <div>
                     <h1>Join the meeting directly</h1>
@@ -377,11 +377,11 @@
                     and verify that you can see and hear yourself
                 </div>
                 <div>
-                    <a href="#anchor1"><p style="padding-top: 30px;">Make a different selection</p></a>
+                    <a href="#select"><p style="padding-top: 30px;">Make a different selection</p></a>
                 </div>
             </div>
         </div>
-        <div class="section" id="section2" style="display: none;">
+        <div class="section" id="browser" data-anchor="webrtc" style="display: none;">
             <div class="intro">
                 <div>
                     <h1>Join from a browser</h1>
@@ -396,7 +396,7 @@
                     </div>
                 </div>
                 <div>
-                    <a href="#anchor1"><p style="padding-top: 30px;">Make a different selection</p></a>
+                    <a href="#select"><p style="padding-top: 30px;">Make a different selection</p></a>
                 </div>
             </div>
         </div>
@@ -406,7 +406,7 @@
     
     <script type="text/javascript">
         var myFullpage = new fullpage('#fullpage', {
-            anchors: ['anchor1', 'anchor2', 'anchor3'],
+            anchors: ['select', 'endpoint', 'webrtc'],
             css3: true
         });
     </script>
