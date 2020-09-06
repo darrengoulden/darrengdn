@@ -19,7 +19,7 @@ number_of_posts: 10
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-target-blank
+  - jekyll-extlinks
 
 defaults:
   - scope:
@@ -41,3 +41,8 @@ exclude:
   - Gemfile.lock
   - .jekyll-cache/
   - .sass-cache/
+
+# External links
+extlinks:
+  attributes: {rel: nofollow, target: _blank}
+  rel_exclude: []
