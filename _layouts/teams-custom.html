@@ -90,6 +90,9 @@
                 document.getElementById(
                     'browser'
                 ).style.display = 'table';
+                document.getElementById(
+                    'select-other'
+                ).style.display = 'block';
                 var webrtcLink =
                     'https://my.pexip.node/webapp/?conference=' +
                     domainJoinAlias;
@@ -376,7 +379,7 @@
                     <a id="test-join" class="bold-font" target="_blank" rel="noopener"></a>
                     and verify that you can see and hear yourself
                 </div>
-                <div>
+                <div id="select-other" style="display: none;">
                     <a href="#select"><p style="padding-top: 30px;">Make a different selection</p></a>
                 </div>
             </div>
