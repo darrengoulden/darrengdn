@@ -46,3 +46,7 @@ exclude:
 extlinks:
   attributes: {rel: nofollow, target: _blank}
   rel_exclude: []
+
+# Nav links
+header_pages:
+  - archive.md

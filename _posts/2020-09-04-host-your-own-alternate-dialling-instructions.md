@@ -3,6 +3,7 @@ layout: post
 title:  "Host your own alternate dialling instruction page"
 date:   2020-09-04 08:00:00 +0100
 categories: pexip cvi
+tags: pexip cvi
 comments: true
 sitemap: true
 ---

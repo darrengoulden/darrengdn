@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<h2>Categories</h2>
 <ul>
 {% assign categories_list = site.categories %}
   {% if categories_list.first[0] == null %}
@@ -36,3 +37,7 @@ layout: default
     {% assign group = nil %}
   </ul>
 {% endfor %}
+
+<div class="post">
+  {% include archive.html %}
+</div>

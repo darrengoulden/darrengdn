@@ -343,3 +343,26 @@
 #share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
 #share-buttons > div.reddit > svg {height: 19px; margin-top: 7px;}
 #share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+
+/* Tags */
+.post-tags {
+  display: block;
+  margin-top: -.5rem;
+  margin-bottom: .5rem;
+}
+
+.tag-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.no-underline:hover{
+  text-decoration: none;
+}
+
+code {
+  padding: .25em .5em;
+  font-size: 85%;
+  color: #bf616a;
+  border-radius: 3px;
+}
