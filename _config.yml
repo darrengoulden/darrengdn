@@ -21,6 +21,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-target-blank
 
+# jekyll-sitemap options
 defaults:
   - scope:
       path: "assets/img"
