@@ -60,7 +60,7 @@ The links below provide live examples of the default Pexip template and a modifi
 
 [Teams custom alternate dialling instruction page (with WebRTC)](/teams-custom.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w&test=test#anchor1){: #custom_link .acustom }
 
-[Teams custom alternate dialling instruction page (without WebRTC)](/teams-custom.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&test=test#endpoint){: #custom_link .acustom }
+[Teams custom alternate dialling instruction page (without WebRTC)](/teams-custom.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&test=test#anchor1){: #custom_link .acustom }
 
 [Teams custom alternate dialling instruction page (without test call)](/teams-custom.html?conf=123456789&ivr=teams&d=domain.com&prefix=teams.&ip=1.2.3.4&w#anchor1){: #custom_link .acustom }
 
