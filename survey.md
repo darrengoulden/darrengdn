@@ -1,4 +1,0 @@
----
-layout: survey
-sitemap: false
----
